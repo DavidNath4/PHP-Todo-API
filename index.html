@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Todo List API Documentation</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 40px;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .endpoint {
+            margin-bottom: 20px;
+        }
+
+        .endpoint h3 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="text-center mb-5">PHP Todo List API</h1>
+
+    <p class="text-center">
+        Check out the full project on <a href="https://github.com/DavidNath4/PHP-Todo-API" target="_blank">GitHub</a>.
+    </p>
+
+    <div class="container">
+        <h2>Description</h2>
+        <p>This PHP Todo List API is a simple and organized backend service for managing todo items. It provides a set
+            of RESTful endpoints to perform CRUD operations on todo items, making it easy to integrate with various
+            frontend applications.</p>
+
+        <h2>Concept</h2>
+        <p>The key concepts and features of this API are:</p>
+        <ul>
+            <li>Modular Structure</li>
+            <li>Error Handling</li>
+            <li>Database Interaction</li>
+            <li>Validation</li>
+            <li>Interfaces</li>
+            <li>Routing</li>
+        </ul>
+
+        <h2>API Specs</h2>
+
+        <!-- Create Todo Endpoint -->
+        <div class="endpoint card mt-3">
+            <h3 class="card-header" onclick="toggleContent(this)">Create Todo</h3>
+            <div class="card-body">
+                <p>Endpoint: <strong>/app.php/createTodo</strong></p>
+                <pre>{
+    "title": "Meeting with Client",
+    "todo": "Discuss project updates and client requirements",
+    "schedule": "2023-09-18"
+}</pre>
+                <h4>Response</h4>
+                <pre>{
+    "message": "Todo item created successfully"
+}</pre>
+            </div>
+        </div>
+
+        <!-- GET All Endpoint -->
+        <div class="endpoint card mt-3">
+            <h3 class="card-header" onclick="toggleContent(this)">GET all</h3>
+            <div class="card-body">
+                <p>Endpoint: <strong>/app.php/getAllTodo</strong></p>
+                <h4>Response</h4>
+                <pre>[
+    {
+        "id": 1,
+        "title": "Meeting with Client",
+        "todo": "Discuss project updates and client requirements",
+        "schedule": "2023-09-18 00:00:00",
+        "time_update": "2023-09-02 14:15:51",
+        "created_at": "2023-09-02 11:18:02"
+    },
+    {
+        "id": 2,
+        "title": "Finish coding project",
+        "todo": "Complete the remaining tasks in the project",
+        "schedule": "2023-09-10 00:00:00",
+        "time_update": "2023-09-02 11:41:34",
+        "created_at": "2023-09-02 11:41:34"
+    },
+]</pre>
+            </div>
+        </div>
+
+
+        <!-- GET by Id Endpoint -->
+        <div class="endpoint card mt-3">
+            <h3 class="card-header" onclick="toggleContent(this)">GET by ID</h3>
+            <div class="card-body">
+                <p>Endpoint: <strong>/app.php/getTodo=1</strong></p>
+                <h4>Response</h4>
+                <pre>
+    {
+        "id": 1,
+        "title": "Meeting with Client",
+        "todo": "Discuss project updates and client requirements",
+        "schedule": "2023-09-18 00:00:00",
+        "time_update": "2023-09-02 14:15:51",
+        "created_at": "2023-09-02 11:18:02"
+    },
+    </pre>
+            </div>
+        </div>
+
+
+        <!-- Update Todo Endpoint -->
+        <div class="endpoint card mt-3">
+            <h3 class="card-header" onclick="toggleContent(this)">Update Todo</h3>
+            <div class="card-body">
+                <p>Endpoint: <strong>/app.php/updateTodo?id=1</strong></p>
+                <pre>{
+    "title": "Update new Data ",
+    "todo": "Updated Discuss project updates and client requirements",
+    "schedule": "2023-09-18"
+}</pre>
+                <h4>Response</h4>
+                <pre>{
+    "message": "Todo item updated successfully"
+}</pre>
+            </div>
+        </div>
+
+
+        <!-- Delete Todo Endpoint -->
+        <div class="endpoint card mt-3">
+            <h3 class="card-header" onclick="toggleContent(this)">Delete Todo</h3>
+            <div class="card-body">
+                <p>Endpoint: <strong>/app.php/deleteTodo?id=1</strong></p>
+
+                <h4>Response</h4>
+                <pre>{
+    "message": "Todo item deleted successfully"
+}</pre>
+            </div>
+        </div>
+
+
+        <!-- Other endpoints here... -->
+
+    </div>
+
+    <!-- Bootstrap 5 JS and Popper.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function toggleContent(header) {
+            const content = header.nextElementSibling;
+            if (content.style.display === "none" || !content.style.display) {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

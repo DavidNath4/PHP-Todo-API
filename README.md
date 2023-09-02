@@ -25,7 +25,9 @@ The project follows the concept of separating concerns into different classes an
 | `query:{id}, body:{title, todo, schedule}` | `PUT`    | `/app.php/updateTodo?id=?` |
 | `query:{id}`                               | `DELETE` | `/app.php/deleteTodo?id=?` |
 
-##### Create example
+##### Create Todo
+
+`/app.php/createTodo`
 
 ```
 {
@@ -36,13 +38,17 @@ The project follows the concept of separating concerns into different classes an
 
 ```
 
-##### Create Response
+##### Create Todo Response
 
 ```
 {
     "message": "Todo item created successfully"
 }
 ```
+
+##### GET all
+
+`/app.php/getAllTodo`
 
 ##### GET all Response
 
@@ -68,15 +74,11 @@ The project follows the concept of separating concerns into different classes an
 ]
 ```
 
-##### Create Response
+##### GET by id
 
-```
-{
-    "message": "Todo item created successfully"
-}
-```
+`/app.php/getTodo?id=2`
 
-##### GET id Response
+##### GET by id Response
 
 ```
 {
@@ -86,5 +88,37 @@ The project follows the concept of separating concerns into different classes an
     "schedule": "2023-09-10 00:00:00",
     "time_update": "2023-09-02 11:41:34",
     "created_at": "2023-09-02 11:41:34"
+}
+```
+
+##### Update Todo
+
+`/updateTodo?id=8`
+
+```
+{
+    "title": "EDITED DATA",
+    "todo": "EDITED DATA",
+    "schedule": "2023-09-30"
+}
+```
+
+#### Update Todo Response
+
+```
+{
+    "message": "Todo item updated successfully"
+}
+```
+
+#### Delete Todo
+
+`/deleteTodo?id=2`
+
+#### Delete Todo Response
+
+```
+{
+    "message": "Todo item deleted successfully"
 }
 ```
