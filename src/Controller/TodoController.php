@@ -31,7 +31,7 @@ namespace App\Controller {
                 $todo = $this->todoService->getTodoById($id);
 
                 if ($todo === null) {
-                    throw new Exception('Todo item not found', 404);
+                    Helper::respondWithErrorMessage('Todo item not found', 404);
                 }
 
                 Helper::respondWithJson($todo, 200);
@@ -52,7 +52,7 @@ namespace App\Controller {
                 $todos = $this->todoService->getAllTodos();
 
                 if (empty($todos)) {
-                    throw new Exception('No Todo items found', 404);
+                    Helper::respondWithErrorMessage('No Todo items found', 404);
                 }
 
                 Helper::respondWithJson($todos, 200);
@@ -73,7 +73,7 @@ namespace App\Controller {
                 $requestData = json_decode(file_get_contents('php://input'), true);
 
                 if ($requestData === null) {
-                    throw new Exception('Invalid JSON data', 400);
+                    Helper::respondWithErrorMessage('Invalid JSON data', 400);
                 }
 
                 $title = $requestData['title'] ?? '';
