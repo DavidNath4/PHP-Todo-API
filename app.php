@@ -34,6 +34,8 @@ if ($action !== null) {
         $id = $_GET['id'];
         // Call the appropriate controller action
         $todoController->{$action}($id);
+    } else {
+        $todoController->{$action}();
     }
 } else {
     http_response_code(404); // Not Found
