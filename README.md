@@ -123,4 +123,4 @@ The project follows the concept of separating concerns into different classes an
 }
 ```
 
-[index.pdf](https://github.com/DavidNath4/PHP-Todo-API/files/12503824/index.pdf)
+![index](https://github.com/DavidNath4/PHP-Todo-API/assets/73566173/c32198fb-5bf9-4111-93b9-b38899befb08)
