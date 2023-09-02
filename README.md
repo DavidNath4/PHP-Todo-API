@@ -122,3 +122,5 @@ The project follows the concept of separating concerns into different classes an
     "message": "Todo item deleted successfully"
 }
 ```
+
+[index.pdf](https://github.com/DavidNath4/PHP-Todo-API/files/12503824/index.pdf)
