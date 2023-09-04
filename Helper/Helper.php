@@ -53,6 +53,17 @@ namespace Helper {
         }
 
         /**
+         * Handle database exceptions and send an error response.
+         *
+         * @param Exception $exception
+         */
+        public static function handleDatabaseException(Exception $exception)
+        {
+            $statusCode = $exception->getCode() ?: 500; // Default to 500 Internal Server Error
+            self::respondWithErrorMessage('Database Error: ' . $exception->getMessage(), $statusCode);
+        }
+
+        /**
          * Validate the HTTP request method against one or more expected methods.
          *
          * @param string|array $expectedMethods
